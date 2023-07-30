@@ -32,7 +32,7 @@ public class E2ConfigReader {
     }
 
     public static String getProperty(String key) throws IOException {
-        FileInputStream fis=new FileInputStream(Constant.ConfigReaderPath);
+        FileInputStream fis=new FileInputStream(Constant.CONFIG_READER_PATH);
         Properties properties=new Properties();
         properties.load(fis);
         return properties.getProperty(key);

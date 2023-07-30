@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigReader {
+
     public static Properties getProperties(String path) {
         FileInputStream fileInputStream = null;
         Properties properties = null;
@@ -13,23 +14,23 @@ public class ConfigReader {
             properties = new Properties();
             properties.load(fileInputStream);
 
-        } catch (IOException e) {
+        } catch (IOException ioException) {
             System.out.println("Please check the file at the path if it is available " + path);
-        }finally {
+        } finally {
             try {
                 if (fileInputStream != null) {
                     fileInputStream.close();
                 }
             } catch (IOException e) {
-                System.out.println("Something bad happened with the file");
+                e.printStackTrace();
             }
         }
-        // 11:52
         return properties;
     }
 
-    public static String getProperty (String key) throws IOException{
-        Properties properties = getProperties(Constant.ConfigReaderPath);
+    public static String getProperty(String key)  {
+
+        Properties properties = getProperties(Constant.CONFIG_READER_PATH);
         String value = properties.getProperty(key);
         return value;
     }

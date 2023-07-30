@@ -12,10 +12,17 @@ class Axel extends Parent {
     static void printNumber(){
         System.out.println(20);
     }
-    @Override
+
+ /*   @Override
     void getMarry() {
+        System.out.println("I dont want to marry your choice");
+    } */
+
+   @Override
+   void getMarry() {
         super.getMarry();
-    }
+  }
+
 
     private void accessBankBalance(){
         System.out.println("Accessing bank");
